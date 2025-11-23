@@ -1,7 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args); // Создает "строителя" приложения
 var services = builder.Services;
 var configuration = builder.Configuration;
 
+// Логирование
 builder.Host.UseSerilog((context, config) =>
 {
     config

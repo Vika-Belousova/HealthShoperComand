@@ -1,19 +1,18 @@
 namespace HealthShoper.Middlewears;
-
+// Глобальный обработчик исключений для всего API
 public class HostMiddleware : IMiddleware
 {
-
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
         try
         {
-            await next(context);
+            await next(context); // Передает запрос дальше по конвейеру
         }
-        catch (HttpException ex)
+        catch (HttpException ex) // Обработка кастомных HTTP исключений
         {
-            await WriteHttpExceptionAsync(context, ex);
+            await WriteHttpExceptionAsync(context, ex); 
         }
-        catch (Exception ex)
+        catch (Exception ex) // Обработка всех остальных исключений
         {
             var httpEx = new HttpException(
                 HttpStatusCode.InternalServerError,

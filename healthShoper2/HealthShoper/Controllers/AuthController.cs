@@ -4,6 +4,8 @@ namespace HealthShoper.Controllers;
 [AllowAnonymous] // Получить доступ к данному контроллеру может любой пользователь. Без проверки авторизации
 [Route("api/[controller]")] // Базовый маршрут к контроллеру
 [SwaggerTag("api для регистрации и авторизации пользователя")] // Для сваггера помечается для чего нужен данный контроллер
+
+// Dependency Injection: внедрение сервисов вместо явного создания зависимостей
 public class AuthController(IClientService clientService, IAuthService authService) : ControllerBase
 {
     /// <summary>
