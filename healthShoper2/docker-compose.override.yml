@@ -1,0 +1,43 @@
+services:
+  health_shoper:
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=${POSTGRES_HOST};Port=${POSTGRES_PORT};Database=${POSTGRES_DB};User Id=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/certificate.pfx
+      - Kestrel__Certificates__Default__Password=your-password
+      - Cors__Origins=http://localhost:3001;http://localhost;http://health_shoper_ui:3001;https://health_shoper_ui:3001;
+    ports:
+      - '80:80'
+      - '443:443'
+    networks:
+      - health_shoper_network
+    volumes:
+      - ./certs:/https:ro
+    depends_on:
+      - postgresdb_healtshoper
+      - seq_healtshoper
+        
+        
+  health_shoper_ui:
+    environment:
+      - VITE_API_URL=https://localhost
+    ports:
+      - 3001:80
+    networks:
+      - health_shoper_network
+    depends_on:
+      - health_shoper
+
+
+networks:
+  health_shoper_network:
+
+
+volumes:
+  postgres-db:
+  pgadmin-data:
+  seq_data_healtshoper:
+    driver: local
+    
+    

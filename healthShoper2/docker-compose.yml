@@ -1,0 +1,17 @@
+﻿services:
+  health_shoper:
+    container_name: health_shoper
+    build:
+      context: .
+      dockerfile: HealthShoper/Dockerfile
+    restart: always
+      
+  health_shoper_ui:
+    container_name: health_shoper_ui
+    build:
+      context: ./HealthShoper.UI
+      dockerfile: Dockerfile
+    restart: always
+    
+networks:
+  health_shoper_network:

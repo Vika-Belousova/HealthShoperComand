@@ -1,0 +1,15 @@
+services:
+  postgresdb_healtshoper:
+    container_name: postgresdb_healtshoper
+    image: postgres:latest
+    restart: always
+    
+  pgadmin_healtshoper:
+    container_name: pgadmin_healtshoper
+    image: dpage/pgadmin4:latest
+    restart: always
+  
+  seq_healtshoper:
+    image: datalust/seq:latest
+    container_name: seq_healtshoper
+    restart: always
