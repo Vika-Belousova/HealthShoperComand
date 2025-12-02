@@ -1,0 +1,15 @@
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\bin\Debug\net8.0\HealthShoper.BLL.deps.json
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\bin\Debug\net8.0\HealthShoper.BLL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\bin\Debug\net8.0\HealthShoper.BLL.pdb
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\bin\Debug\net8.0\HealthShoper.DAL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\bin\Debug\net8.0\HealthShoper.DAL.pdb
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.csproj.AssemblyReference.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.AssemblyInfoInputs.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.AssemblyInfo.cs
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthSh.D0BE9806.Up2Date
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\refint\HealthShoper.BLL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\HealthShoper.BLL.pdb
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.BLL\obj\Debug\net8.0\ref\HealthShoper.BLL.dll
