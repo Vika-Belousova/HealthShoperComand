@@ -1,0 +1,24 @@
+@'
+# Игнорируем ВСЁ по умолчанию
+*
+
+# НО разрешаем healthShoper2/HealthShoper.BLL (кроме bin и obj)
+!healthShoper2/
+!healthShoper2/HealthShoper.BLL/
+!healthShoper2/HealthShoper.BLL/**/*
+
+# Явно запрещаем bin и obj везде
+**/[Bb]in/
+**/[Oo]bj/
+**/.vs/
+
+# Разрешаем .gitignore файл
+!.gitignore
+
+# Разрешаем файлы решения и docker (если нужно)
+!*.sln
+!docker-compose*.yml
+!*.json
+!*.ps1
+!*.env
+'@ | Out-File .gitignore -Encoding UTF8 -Force
