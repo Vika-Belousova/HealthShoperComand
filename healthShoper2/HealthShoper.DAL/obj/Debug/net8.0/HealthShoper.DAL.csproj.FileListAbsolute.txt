@@ -1,0 +1,14 @@
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\bin\Debug\net8.0\HealthShoper.DAL.deps.json
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\bin\Debug\net8.0\HealthShoper.DAL.runtimeconfig.json
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\bin\Debug\net8.0\HealthShoper.DAL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\bin\Debug\net8.0\HealthShoper.DAL.pdb
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.csproj.AssemblyReference.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.AssemblyInfoInputs.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.AssemblyInfo.cs
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\refint\HealthShoper.DAL.dll
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.pdb
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\HealthShoper.DAL.genruntimeconfig.cache
+C:\Users\Leonid\RiderProjects\HealthShoper\HealthShoper.DAL\obj\Debug\net8.0\ref\HealthShoper.DAL.dll
