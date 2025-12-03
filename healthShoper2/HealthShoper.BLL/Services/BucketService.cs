@@ -4,6 +4,10 @@ using HealthShoper.BLL.Models.Dtos;
 using HealthShoper.DAL.Interfaces;
 using HealthShoper.DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace HealthShoper.BLL.Services;
 
@@ -11,6 +15,7 @@ public class BucketService(IApplicationDbContext dbContext) : IBucketService
 {
     public async Task AddBucket(int itemId, int userId)
     {
+        // Проверяем, существует ли товар
         var item = await dbContext.Set<Item>()
             .AsNoTracking()
             .FirstOrDefaultAsync(p => p.Id == itemId);
@@ -68,17 +73,18 @@ public class BucketService(IApplicationDbContext dbContext) : IBucketService
 
     public async Task DeleteBucket(int itemId, int userId)
     {
+        // Ищем корзину пользователя
         var basket = await dbContext.Set<Basket>()
             .Include(b => b.Items)
             .FirstOrDefaultAsync(b => b.ClientId == userId);
 
         if (basket == null)
             return;
-
+        // Ищем товар в корзине
         var basketItem = basket.Items.FirstOrDefault(i => i.ItemId == itemId);
         if (basketItem == null)
             return;
-
+        // Уменьшаем количество или удаляем
         if (basketItem.Quantity > 1)
         {
             basketItem.Quantity--;
@@ -94,6 +100,7 @@ public class BucketService(IApplicationDbContext dbContext) : IBucketService
 
     public async Task<IEnumerable<ItemDto>> GetFromBucket(int userId)
     {
+        // Ищем корзину с товарами
         var basket = await dbContext.Set<Basket>()
             .Include(b => b.Items)
             .ThenInclude(i => i.Item)
@@ -102,7 +109,7 @@ public class BucketService(IApplicationDbContext dbContext) : IBucketService
 
         if (basket == null)
             return Enumerable.Empty<ItemDto>();
-
+        // Преобразуем в DTO (берём цену из корзины, а не из товара)
         return basket.Items.Select(i => new ItemDto
         {
             Id = i.ItemId,

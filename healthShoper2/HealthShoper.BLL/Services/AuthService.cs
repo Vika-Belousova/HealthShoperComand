@@ -1,4 +1,10 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -44,9 +50,9 @@ public class AuthService(
         {
             throw new UnauthorizedAccessException();
         }
-
+        // Данные для токена 
         var claims = CreateClaims(userId, client);
-
+        // Генерируем Access Token (секретный ключ из конфигурации)
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["ApplicationSettings:Secret"]!));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -56,19 +62,20 @@ public class AuthService(
             expires: DateTime.UtcNow.AddHours(1),
             signingCredentials: creds
         );
+        // Генерируем Refresh Token(случайная строка)
         var tokenDto = new TokenDto
         {
             AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
             RefreshToken = GenerateRefreshToken(),
             ValidTo = token.ValidTo
         };
-
+        // Сохраняем Refresh Token в БД (для проверки при обновлении)
         client.RefreshToken = tokenDto.RefreshToken;
         dbContext.Set<Client>().Update(client);
         await dbContext.SaveChangesAsync();
         return tokenDto;
     }
-
+    // Вход пользователя
     public async Task<TokenDto> LogIn(LogInViewModel viewModel)
     {
         var client = await dbContext.Set<Client>().FirstOrDefaultAsync(p => p.Email == viewModel.Email && !p.IsDeleted);
@@ -119,7 +126,7 @@ public class AuthService(
     }
 
     /// <summary>
-    /// Создание Claims
+    /// Создание Claims (данных для токена)
     /// </summary>
     /// <param name="userId"></param>
     /// <param name="client"></param>

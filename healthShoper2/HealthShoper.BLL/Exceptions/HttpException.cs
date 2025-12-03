@@ -29,6 +29,7 @@ public class HttpException : Exception
         };
     }
 
+    // Конструктор для одной ошибки
     public HttpException(
         HttpStatusCode httpStatusCode,
         ErrorCode errorCode,
@@ -46,6 +47,7 @@ public class HttpException : Exception
         Type = errorCode;
         Errors = new Dictionary<string, string[]> { { errorType, new[] { errorMessage } } };
     }
+    // Конструктор для нескольких ошибок
     public HttpException(
         HttpStatusCode httpStatusCode,
         ErrorCode errorCode,

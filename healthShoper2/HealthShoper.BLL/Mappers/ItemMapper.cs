@@ -7,11 +7,12 @@ namespace HealthShoper.BLL.Mappers;
 [Mapper]
 public static partial class ItemMapper
 {
+    // Для коллекции товаров
     public static IEnumerable<ItemDto> MapToItemDtos(this IEnumerable<Item> items)
     {
         return items.Select(MapToItemDto);
     }
-
+    // Для одного товара + расчёт скидки!
     public static ItemDto MapToItemDto(this Item item)
     {
         var dto = ToDto(item);

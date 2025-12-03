@@ -6,22 +6,29 @@ namespace HealthShoper.BLL.Extensions;
 
 public class ConstantsJson
 {
-    public static readonly JsonSerializerOptions JsonLogOptions =
-        new() { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping, WriteIndented = true };
+    // Для логов: разрешает неэкранированные символы, красивый вывод
+    public static readonly JsonSerializerOptions JsonLogOptions = new()
+    {
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        WriteIndented = true
+    };
 
-    public static readonly JsonSerializerOptions JsonDeserializeApiOptions =
-        new()
+    // Для десериализации API: с конвертерами и без учёта регистра
+    public static readonly JsonSerializerOptions JsonDeserializeApiOptions = new()
+    {
+        Converters =  // кастомные конвертеры
         {
-            Converters =
-            {
-                new BoolConverter(),
-                new BoolNullConverter(),
-                new IntConverter(),
-                new IntNullConverter()
-            },
-            PropertyNameCaseInsensitive = true
-        };
+            new BoolConverter(),
+            new BoolNullConverter(),
+            new IntConverter(),
+            new IntNullConverter()
+        },
+        PropertyNameCaseInsensitive = true  
+    };
 
-    public static readonly JsonSerializerOptions JsonSerializeApiOptions =
-        new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+    // Для сериализации API: camelCase 
+    public static readonly JsonSerializerOptions JsonSerializeApiOptions = new()
+    {
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    };
 }
